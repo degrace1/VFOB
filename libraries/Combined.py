@@ -1,4 +1,9 @@
 from ultrasonic_sensor import *
+import sys
+import zmq
+import time
+import socket
+
 
 
 class BoltState:
@@ -15,7 +20,7 @@ class BoltState:
     def setDistance(self):
         self.distance = self.ultrasonic.get_distance()
 
-    def addLocation(self, x, y):
+    def addLocation(self, x, y): #maybe dont need this hm
         self.bolt_location.append(x)
         self.bolt_location.append(y)
 
@@ -38,3 +43,6 @@ class BoltState:
         temp += "x=" + str(self.bolt_location[0]) + delim
         temp += "y=" + str(self.bolt_location[1])
         return temp
+
+
+
