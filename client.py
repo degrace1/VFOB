@@ -1,3 +1,12 @@
+# Made By Grace on 4/2/21
+# Name: client.py
+# This program connects to the server through port "5556"
+# and sends a message asking for info.
+# What needs to be changed:
+# - change request to send only when needed
+# - change message to be split differently (will be sent in the format "Distance=#,x=#,b=#")
+
+
 import zmq
 import sys
 
