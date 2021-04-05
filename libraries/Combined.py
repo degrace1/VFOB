@@ -18,11 +18,11 @@ class BoltState:
     def setDistance(self):
         self.distance = self.ultrasonic.get_distance()
 
-    def addLocation(self, x, y): #maybe dont need this hm
+    def addLocation(self, x, y):  # maybe dont need this hm
         self.bolt_location.append(x)
         self.bolt_location.append(y)
 
-    def setLocation(self, x, y):
+    def setLocation(self, x, y):  # can probs remove x & y and change to function from data
         self.bolt_location.clear()
         self.addLocation(x,y)
 

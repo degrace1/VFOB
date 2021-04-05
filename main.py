@@ -25,6 +25,8 @@ y=  #add here y
 me = BoltState()
 me.setDistance()
 me.setlocation(x,y)
+me.run()
+
 
 
 
