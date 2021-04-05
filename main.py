@@ -2,6 +2,8 @@ import os
 import sys
 import zmq
 import time
+from libraries.CarRun import *
+from libraries.Motor import *
 
 from libraries.Combined import *
 from libraries.ObjectDet import *
@@ -17,7 +19,13 @@ context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:%s" % port)
 
+x=  #add here x
+y=  #add here y
+
 me = BoltState()
+me.setDistance()
+me.setlocation(x,y)
+
 
 
 while True:

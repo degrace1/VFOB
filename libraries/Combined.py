@@ -1,9 +1,7 @@
 from ultrasonic_sensor import *
-import sys
-import zmq
+from Motor import *
+import math
 import time
-import socket
-
 
 
 class BoltState:
@@ -44,5 +42,15 @@ class BoltState:
         temp += "y=" + str(self.bolt_location[1])
         return temp
 
-
-
+    def run(self):
+        x = self.bolt_location[0]
+        distance = self.distance
+        angle = math.tan(distance / x)
+        travel = math.sqrt(math.pow(x, 2)+math.pow(distance, 2))
+        # turn angle
+        # drive travel
+        speed = 1  #FIXME add speed here
+        sec = speed/travel
+        PWM.setMotorModel(800, 800, 800, 800)
+        time.sleep(sec)
+        PWM.setMotorModel(0, 0, 0, 0)
