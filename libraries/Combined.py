@@ -24,7 +24,7 @@ class BoltState:
 
     def setLocation(self, x, y):  # can probs remove x & y and change to function from data
         self.bolt_location.clear()
-        self.addLocation(x,y)
+        self.addLocation(x, y)
 
     # get methods
     def getDistance(self):

@@ -22,9 +22,8 @@ socket.bind("tcp://*:%s" % port)
 x=  #add here x
 y=  #add here y
 
-me = BoltState()
+me = BoltState(x,y)
 me.setDistance()
-me.setlocation(x,y)
 me.run()
 
 
