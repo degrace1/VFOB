@@ -2,11 +2,12 @@ import os
 import sys
 import zmq
 import time
-from libraries.CarRun import *
-from libraries.Motor import *
+sys.path.append(os.path.relpath("./libraries"))
 
-from libraries.Combined import *
-from libraries.ObjectDet import *
+from Motor import *
+
+from Combined import *
+from ObjectDet import *
 
 sys.path.append(os.path.relpath("./libraries"))
 
@@ -19,8 +20,8 @@ context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:%s" % port)
 
-x=  #add here x
-y=  #add here y
+x= 100 #add here x
+y= 100 #add here y
 
 me = BoltState(x,y)
 me.setDistance()
@@ -28,7 +29,7 @@ me.run()
 
 
 
-
+'''
 while True:
     # wait for next request from client
     message = socket.recv()
@@ -43,3 +44,4 @@ while True:
 
     sentMessage = me.logInLine()
     socket.send(sentMessage % port)
+'''
