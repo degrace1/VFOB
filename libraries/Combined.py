@@ -45,7 +45,7 @@ class BoltState:
     def run(self):
         PWM = Motor()
         x = self.bolt_location[0]
-        distance = self.distance
+        distance = self.distance - 25
         angle = math.tan(distance / x)
         travel = math.sqrt(math.pow(x, 2)+math.pow(distance, 2))
         # turn angle
