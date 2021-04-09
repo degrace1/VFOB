@@ -21,10 +21,10 @@ socket = context.socket(zmq.REP)
 socket.bind("tcp://*:%s" % port)
 
 # get x from objectdet
-x =
+x =100
 # update x in me
 # get y from objectdet
-y =
+y =100
 # update y in me
 
 me = BoltState(x,y)
@@ -33,7 +33,7 @@ me.run()
 
 
 
-
+'''
 while True:
     # wait for next request from client
     message = socket.recv()
@@ -48,3 +48,4 @@ while True:
 
     sentMessage = me.logInLine()
     socket.send(sentMessage % port)
+'''

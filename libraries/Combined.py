@@ -45,24 +45,28 @@ class BoltState:
     def run(self):
         PWM = Motor()
         x = self.bolt_location[0]
-        distance = self.distance - 25
+        distance = self.distance - 10
         angle = math.tan(distance / x)
         travel = math.sqrt(math.pow(x, 2)+math.pow(distance, 2))
+        print(travel)
         # turn angle
         #PWM.destroy()
         PWM.setMotorModel(0,0,0,0)
-        turnTime = 3  #FIXME
+        turnTime = 2  #FIXME
         try:
             
-            PWM.setMotorModel(2000,2000,-1250,-1250)  #turn right
-            time.sleep(turnTime)
+            PWM.setMotorModel(4000,4000,-3500,-350)  #turn right
+            time.sleep(turnTime/2)
             # drive travel
             
             speed = 35.4  #FIXME add speed here
             
-            sec = speed/travel
-            PWM.setMotorModel(800, 800, 1250, 1250)
-            time.sleep(sec)
+            sec = travel/speed
+            PWM.setMotorModel(1200, 1200, 3500, 3500)
+            time.sleep(sec/2.1)
+            PWM.setMotorModel(0, 0, 0, 0)
+            PWM.setMotorModel(-3500,-3500, 2000, 2000)
+            time.sleep(turnTime/2.15)
             PWM.setMotorModel(0, 0, 0, 0)
         
         except KeyboardInterrupt:
