@@ -5,7 +5,7 @@ from imutils.video import VideoStream
 class objectdet:
     def __init__(self, vs = None):
         ################################################################
-        self.path = 'haarcascades/haarcascade 13stg.xml'  # PATH OF THE CASCADE
+        self.path = 'haarcascades/cascade2.xml'  # PATH OF THE CASCADE
         #self.cameraNo = 0                       # CAMERA NUMBER
         self.objectName = 'Bolt'       # OBJECT NAME TO DISPLAY
         self.frameWidth= 640                     # DISPLAY WIDTH
@@ -26,7 +26,7 @@ class objectdet:
         # CREATE TRACKBAR
         cv2.namedWindow("Result")
         cv2.resizeWindow("Result",self.frameWidth,self.frameHeight+100)
-        cv2.createTrackbar("Scale","Result",400,1000,self.empty)
+        cv2.createTrackbar("Scale","Result",53,1000,self.empty)
         cv2.createTrackbar("Neig","Result",8,50,self.empty)
         cv2.createTrackbar("Min Area","Result",0,100000,self.empty)
         cv2.createTrackbar("Brightness","Result",180,255,self.empty)
